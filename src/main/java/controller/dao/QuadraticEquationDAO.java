@@ -66,7 +66,7 @@ public class QuadraticEquationDAO {
     }
     
     
-    //Select для того щоб дістати всі рівняння з результатами з бази.
+    //Select для того чтобы получить все уравнения результатам из базы.
     public ArrayList<QuadraticEquation> getAlEquation(){
         ArrayList<QuadraticEquation> equationList = new ArrayList<>();
         
@@ -90,8 +90,8 @@ public class QuadraticEquationDAO {
         return equationList;
     }
     
-    /*перевірка відбувається в контролері, відповідно якщо в базі є таке рівняння 
-    воно витягує з бази, якщо немає додає в базу нове.*/
+    /*проверка происходит в контроллере, соответственно если в базе есть такое уравнение
+     оно извлекает из базы, если нет добавляет в базу новое.*/
     public QuadraticEquation findResultEquation(double a, double b, double c) {
         PreparedStatement state1 = null;
         ResultSet res = null;
