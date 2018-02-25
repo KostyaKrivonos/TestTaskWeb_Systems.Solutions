@@ -34,12 +34,12 @@ public class QuadraticEquationController {
         quadraticEquation.setD(D);
         
         if (D > 0) {
-            //Рівняння має два корені;
+            //Уравнение имеет два корня;
             quadraticEquation.setX1((-b - Math.sqrt(D)) / (2 * a));
             quadraticEquation.setX2((-b + Math.sqrt(D)) / (2 * a));
             return quadraticEquationDAO.insertEquation(quadraticEquation);
         }if (D == 0) {
-            //Рівняння має єдиний корінь;
+            //Уравнение имеет единственный корень;
             quadraticEquation.setX1(-b / (2 * a));
             return quadraticEquationDAO.insertEquation(quadraticEquation);
         }  
@@ -51,8 +51,8 @@ public class QuadraticEquationController {
     }
     
     public boolean findResultQuadraticEquation(TransferObjectEquation t) throws NoHasRealRootsException{
-        //аналіз обєкта рішення від дао. якщо в базі таке є ти повертаєш це рішення наформу
-        //якщо нема, контроллер вирішує це рівняння і дає команду ДАО зберегти рішення а потім віддає його вюшці
+        // анализ объекта решение от дао. если в базе такое есть ты поворачиваешь это решение на форму
+         // если нет контроллер решает это уравнение и дает команду ГАО сохранить решение а потом отдает его view
         
         QuadraticEquation eq1 =quadraticEquationDAO.findResultEquation(t.getA(), t.getB(), t.getC());
                 if(eq1 == null){
